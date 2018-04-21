@@ -1,10 +1,12 @@
 package lainguyen523.gmail.com;
 
-public class Tinhtong {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+public class TinhTong {
+	public static float thuchien(float[] a) {
+		float S = 0;
+		int size = a.length;
+		for (int i = 0; i < size; i ++){
+			S += a[i];
+		}
+		return S;
 	}
-
 }
