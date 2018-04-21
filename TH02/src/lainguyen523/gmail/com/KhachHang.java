@@ -19,5 +19,9 @@ public class KhachHang {
 	public void setPassword(String pass) {
 		password = pass;
 	}
+	public KhachHang(String username, String password) {
+		username = "abc";
+		password = "123";
+	}
 	// Tiếp tục cho các phương thức khác
 }

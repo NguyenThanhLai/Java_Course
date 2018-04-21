@@ -3,8 +3,8 @@ package lainguyen523.gmail.com;
 public class HangHoa {
 	private String tenHang;
 	private String ngaysanxuat;
-	private String DonGia;
-	private String SoLuong;
+	private float DonGia;
+	private int SoLuong;
 
 	public String getTenHang() {
 		return tenHang;
@@ -22,20 +22,25 @@ public class HangHoa {
 		this.ngaysanxuat = ngaysanxuat;
 	}
 
-	public String getDonGia() {
+	public float getDonGia() {
 		return DonGia;
 	}
 
-	public void setDonGia(String DonGia) {
+	public void setDonGia(float DonGia) {
 		this.DonGia = DonGia;
 	}
 
-	public String getSoLuong() {
+	public int getSoLuong() {
 		return SoLuong;
 	}
 
-	public void setSoLuong(String SoLuong) {
+	public void setSoLuong(int SoLuong) {
 		this.SoLuong = SoLuong;
+	}
+
+	public String inThongTin() {
+		return "Ten Hang : " + tenHang + "Ngay san xuat" + ngaysanxuat + "Don gia " + DonGia +
+				"So luong " + SoLuong;
 	}
 
 	// Tiếp tục cho các phương thức còn lại
