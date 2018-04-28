@@ -1,4 +1,4 @@
-package akimkute05.gmail.com;
+package lainguyen523.gmail.com;
 
 public class Point {
 	private float x;//Tọa độ x
