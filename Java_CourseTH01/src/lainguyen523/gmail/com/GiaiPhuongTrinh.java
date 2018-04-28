@@ -1,4 +1,4 @@
-package akimkute05.gmail.com;
+package lainguyen523.gmail.com;
 
 public class GiaiPhuongTrinh {
 	public static void thuchien(float a, float b, float c) {
