@@ -1,10 +1,24 @@
 package lainguyen523.gmail.com;
 
-public class HinhKhoi3 {
+public class HinhKhoi3 extends HinhKhoi {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	private float bankinh;
 
+	public float getBankinh() {
+		return bankinh;
+	}
+
+	public void setBankinh(float bankinh) {
+		this.bankinh = bankinh;
+	}
+
+	public HinhKhoi3(float chieucao, float bankinh) {
+		super(chieucao);
+		this.bankinh = bankinh;
+	}
+
+	public double thetich3() {
+		return chieucao * Math.PI * Math.pow(bankinh, 2);
 	}
 
 }
