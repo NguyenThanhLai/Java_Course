@@ -1,11 +1,12 @@
 package lainguyen523.gmail.com;
 
 public abstract class AVector {
-	public abstract double TinhDoDai(); 
-	
-	public abstract double SinGoc();
-	
-	public abstract double TrucGiao();
-	
+	protected float x;
+	protected float y;
 
-} 
+	public abstract double tinhDoDai();
+
+	public abstract double sinGoc();
+
+	public abstract double trucGiao();
+}
