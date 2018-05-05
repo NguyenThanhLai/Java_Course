@@ -11,6 +11,7 @@ public class Vector2D extends AVector {
 		int a = 0;
 		// TODO Auto-generated method stub
 		return Math.abs(a);
+		
 	}
 
 	@Override
