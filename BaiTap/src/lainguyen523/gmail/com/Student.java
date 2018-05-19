@@ -4,33 +4,20 @@ import java.time.ZoneId;
 import java.util.Date;
 
 public class Student {
-	private String ma;
-	private String hoten;
-	private int namsinh;
-	private boolean gioitinh;
+	public String ma;
+	public String hoten;
+	public int namsinh;
+	public boolean gioitinh;
 
+	public int gettinhTuoi() {
+		return (new Date()).toInstant().atZone(ZoneId.systemDefault()).getYear() - namsinh;
+	}
+	
+	//ham tao
 	public Student(String ma, String hoten, int namsinh, boolean gioitinh) {
 		this.ma = ma;
 		this.hoten = hoten;
 		this.namsinh = namsinh;
-		this.setGioitinh(gioitinh);
-	}
-
-	public int getAge() {
-		return (new Date()).toInstant().atZone(ZoneId.systemDefault()).getYear() - namsinh;
-	}
-
-	@Override
-	public String toString() {
-		return "ma: " + ma + ", hoten: " + hoten + ", Age: " + getAge() + ", gioitinh: "
-				+ ((gioitinh) ? "Man" : "Woman");
-	}
-
-	public boolean getGioitinh() {
-		return gioitinh;
-	}
-
-	public void setGioitinh(boolean gioitinh) {
 		this.gioitinh = gioitinh;
 	}
 
@@ -56,6 +43,20 @@ public class Student {
 
 	public void setNamsinh(int namsinh) {
 		this.namsinh = namsinh;
+	}
+
+	public boolean getGioitinh() {
+		return gioitinh;
+	}
+
+	public void setGioitinh(boolean gioitinh) {
+		this.gioitinh = gioitinh;
+	}
+
+	@Override
+	public String toString() {
+		return "Sinh vien: " + "\nMa sinh vien: " + ma + "\nHo ten sinh vien:" + hoten + "\nNam sinh: " + namsinh
+				+ "\nGioi tinh: " + ((gioitinh) ? "Nam" : "Nu");
 	}
 
 }
