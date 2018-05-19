@@ -1,29 +1,23 @@
 package lainguyen523.gmail.com;
 
-import java.util.Date;;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class Employer {
-	private String ma;
-	private String hoten;
-	private int namsinh;
-	private boolean gioitinh;
-	private float hsl;
+	public String ma;
+	public String hoten;
+	public int namsinh;
+	public boolean gioitinh;
+	public double hsl;
 
-	public float tinhLuong() {
-		return 3500000 * hsl;
+	public Employer(String ma, String hoten, int namsinh, boolean gioitinh, double hsl) {
+		this.ma = ma;
+		this.hoten = hoten;
+		this.namsinh = namsinh;
+		this.gioitinh = gioitinh;
+		this.hsl = hsl;
 	}
-
-	@SuppressWarnings("deprecation")
-	public int getAge() {
-		return (new Date()).getYear() - namsinh;
-	}
-
-	@Override
-	public String toString() {
-		return "ma: " + ma + ", hoten: " + hoten + ", Age: " + getAge() + ", gioitinh: "
-				+ ((gioitinh) ? "Man" : "Woman") + ", Salary: " + tinhLuong();
-	}
-
+	
 	public String getMa() {
 		return ma;
 	}
@@ -48,7 +42,7 @@ public class Employer {
 		this.namsinh = namsinh;
 	}
 
-	public boolean isGioitinh() {
+	public boolean getGioitinh() {
 		return gioitinh;
 	}
 
@@ -56,12 +50,27 @@ public class Employer {
 		this.gioitinh = gioitinh;
 	}
 
-	public float getHsl() {
+	public double getHsl() {
 		return hsl;
 	}
 
-	public void setHsl(float hsl) {
+	public void setHsl(double hsl) {
 		this.hsl = hsl;
 	}
 
+	public int gettinhTuoi() {
+		return (new Date()).toInstant().atZone(ZoneId.systemDefault()).getYear() - namsinh;
+	}
+
+	public double tinhLuong() {
+		return hsl * 1250000;
+	}
+
+	@Override
+	public String toString() {
+		return "Sinh vien: " + "\nMa sinh vien: " + ma + "\nHo ten sinh vien:" + hoten + "\nNam sinh: " + namsinh
+				+ "\nGioi tinh: " + ((gioitinh) ? "Nam" : "Nu") + "\nHe so luong: " + hsl + "\nLuong: " + tinhLuong();
+	}
+
+}
 }
