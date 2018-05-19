@@ -3,32 +3,48 @@ package lainguyen523.gmail.com;
 import java.util.ArrayList;
 
 public class Students implements iHuman {
-	private ArrayList<Student> Students = new ArrayList<Student>();
+
+	private ArrayList<Student> students = new ArrayList<>();
+
+	public ArrayList<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(ArrayList<Student> students) {
+		this.students = students;
+	}
 
 	@Override
 	public Object timKiem(int from, int to) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Student> timtuoi = new ArrayList<Student>();
+		for (int i = 0; i < students.size(); i++) {
+			if (students.get(i).gettinhTuoi() <= to && students.get(i).gettinhTuoi() >= from) {
+				timtuoi.add(students.get(i));
+			}
+		}
+		return timtuoi;
 	}
 
 	@Override
-	public Object timKiem(boolean gender) {
-		// TODO Auto-generated method stub
-		return null;
+	public Object timKiem(boolean gioitinh) {
+		ArrayList<Student> timgt = new ArrayList<Student>();
+		for (int i = 0; i < students.size(); i++) {
+			if (students.get(i).getGioitinh() == gioitinh) {
+				timgt.add(students.get(i));
+			}
+		}
+		return timgt;
 	}
 
 	@Override
-	public Object timKiem(String ten) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public ArrayList<Student> getStudents() {
-		return Students;
-	}
-
-	public void setStudents(ArrayList<Student> Students) {
-		this.Students = Students;
+	public Object timKiem(String hoten) {
+		ArrayList<Student> timten = new ArrayList<Student>();
+		for (int i = 0; i < students.size(); i++) {
+			if (students.get(i).getHoten().indexOf(hoten) >= 0) {
+				timten.add(students.get(i));
+			}
+		}
+		return timten;
 	}
 
 }
